@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    Форма с параметрами письма
+{% endblock %}
+
+{% block content %}
+<form action="success/" method="POST">
+    {% csrf_token %}
+    Your Email:  <input type="email" id="mail" name="form_mail" class='field_form'>
+    Time: <input type="number" id="timedelta" name="timedelta" min="0" max="3600">
+    <textarea name="user_message" class='field_form'>
+        Текст вашего сообщения
+    </textarea>
+    <button type="submit">Отправить сообщение</button>
+</form>
+
+{% endblock %}

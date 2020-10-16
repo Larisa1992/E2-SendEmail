@@ -1,0 +1,7 @@
+.env
+env_2
+*.pyc
+.vscode/
+sendemail/__pycache__/
+__pycache__/
+*.sqlite3

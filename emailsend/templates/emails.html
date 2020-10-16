@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Статусы отпраки писем
+{% endblock %}
+
+{% block content %}
+<table border="1">
+    {% for em in ten_emails %}
+    <tr>
+        <td>Кому отправлено {{ em.toEmail }}</td>
+        <td>Содержание пиьсма {{ em.textmessage }}</td>
+        <td>Признак отправки письма (True - отправлено) {{ em.boolsend }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
