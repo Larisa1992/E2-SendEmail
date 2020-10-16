@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from emailsend.models import MyEmail
-from django.core.mail import send_mail,get_connection
+from django.core.mail import send_mail, get_connection
 from django.core import mail
 from django.http import HttpResponse
 # from django_mandrill.mail.mandrillmail import MandrillTemplateMail
