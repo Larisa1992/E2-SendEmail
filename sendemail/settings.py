@@ -16,15 +16,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# EMAIL_BACKEND = 'anymail.backends.mailjet.EmailBackend'
+
 EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
 MAILJET_API_KEY = os.getenv('MAILJET_API_KEY')
 MAILJET_API_SECRET = os.getenv('MAILJET_API_SECRET')
 
-
-# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
-# SENDGRID_TEMPLATE_ID = os.getenv('SENDGRID_TEMPLATE_ID')
-
-# RECIPIENTS_EMAIL = ['manager@mysite.com']   # замените на свою почту
 DEFAULT_FROM_EMAIL = 'pelar1992@mail.ru'  # замените на свою почту
 
 # для авторизации на SMTP сервере
@@ -49,9 +46,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'emailsend',
     'django.contrib.admin',
