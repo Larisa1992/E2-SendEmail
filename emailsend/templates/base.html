@@ -2,16 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8" />
     <title>{% block title %}  {% endblock %}</title>
     <style type="text/css">
         .field_form
         , #content {
             width: 30vw;
         }
+        #page_list {
+            width: 80vw;
+            margin-right: 10vw;
+        }
+        .btn {
+            background:rgb(162, 223, 162);
+            margin-top: 5px;
+            min-height: 35px;
+        }
     </style>
 </head>
 <body>
     <div id="content">{% block content %}{% endblock %}</div>
+    <div id="page_list">{% block page_list %}{% endblock %}</div>
     <div id="footer">
         {% block footer %}
         {% endblock %}

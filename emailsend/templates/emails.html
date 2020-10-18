@@ -4,14 +4,32 @@
 Статусы отпраки писем
 {% endblock %}
 
-{% block content %}
+{% block page_list %}
 <table border="1">
+    <caption>10 последних отправленных писем</caption>
+    <tr>
+        <th>Кому отправлено</th>
+        <th>Содержание пиcьма</th>
+        <th>Время старта</th>
+        <th>Задержка (сек)</th>
+        <th>Статус</th>
+    </tr>
     {% for em in ten_emails %}
     <tr>
-        <td>Кому отправлено {{ em.toEmail }}</td>
-        <td>Содержание пиьсма {{ em.textmessage }}</td>
-        <td>Признак отправки письма (True - отправлено) {{ em.boolsend }}</td>
+        <td>{{ em.toEmail }}</td>
+        <td>{{ em.textmessage }}</td>
+        <th> {{ em.createdate|date:"d.m.Y H:m:s" }} </th>
+        <th> {{ em.timedelta }} </th>
+        
+        <td>{% if em.boolsend %}
+                Oтправлено
+            {% else %}
+                В очереди
+            {% endif %}
+        </td>
+
     </tr>
     {% endfor %}
 </table>
+<button class='btn'><a href="{% url 'emailsend:contact' %}">Вернуться на страницу отправки письма</a></button>
 {% endblock %}
