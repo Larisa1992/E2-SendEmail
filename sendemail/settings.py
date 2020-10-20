@@ -38,9 +38,6 @@ EMAIL_HOST_PASSWORD = MAILJET_API_SECRET
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -51,8 +48,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-DISABLE_COLLECTSTATIC=1
 
 # Application definition
 INSTALLED_APPS = [
