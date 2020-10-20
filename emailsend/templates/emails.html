@@ -20,9 +20,9 @@
         <td>{{ em.textmessage }}</td>
 
         {% load tz %}
-        <th> {{ em.createdate|localtime }} </th> 
+        {% timezone "Europe/Moscow" %}
         <th> {{ em.createdate|date:"d.m.y H:i:s" }} </th>
-
+        {% endtimezone %}
         <th> {{ em.timedelta }} </th>
         
         <td>{% if em.boolsend %}
