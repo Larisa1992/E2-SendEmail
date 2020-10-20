@@ -9,10 +9,7 @@ from sendemail.settings import DEFAULT_FROM_EMAIL, TIME_ZONE
 
 import datetime
 
-def worker(message, from_email, to_email, id_email):
-    # html_message
-    # send_mail('Subject here', message, from_email, [to_email], fail_silently=False,)
-    
+def worker(message, from_email, to_email, id_email):    
     with mail.get_connection() as connection:
         mail.EmailMessage(
             'Subject here', message, from_email, [to_email],
@@ -22,7 +19,6 @@ def worker(message, from_email, to_email, id_email):
     update_status = MyEmail.objects.get(id=id_email)
     update_status.boolsend = True
     update_status.save()
-    print(f'worker id_email = {id_email} ')
 
 def index(request):   
     return render(request, 'index.html')
@@ -39,7 +35,6 @@ def success(request):
         new_mail = MyEmail.objects.create(toEmail = _toEmail, textmessage = _textmessage, timedelta = _timedelta, createdate = CREATE_DRRM)
 
         try:
-            print(f' try new_mail.id = {new_mail.id} DEFAULT_FROM_EMAIL {DEFAULT_FROM_EMAIL}, _toEmail {_toEmail}')
             t = threading.Timer(_timedelta, worker, args=(_textmessage, DEFAULT_FROM_EMAIL, _toEmail, new_mail.id, ))
             t.start()
         except:
