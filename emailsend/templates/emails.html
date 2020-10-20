@@ -18,7 +18,11 @@
     <tr>
         <td>{{ em.toEmail }}</td>
         <td>{{ em.textmessage }}</td>
+
+        {% load tz %}
+        <th> {{ em.createdate|localtime }} </th> 
         <th> {{ em.createdate|date:"d.m.y H:i:s" }} </th>
+
         <th> {{ em.timedelta }} </th>
         
         <td>{% if em.boolsend %}
