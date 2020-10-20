@@ -18,7 +18,7 @@
     <tr>
         <td>{{ em.toEmail }}</td>
         <td>{{ em.textmessage }}</td>
-        <th> {{ em.createdate|date:"d.m.Y H:m:s" }} </th>
+        <th> {{ em.createdate|date:"d.m.y H:i:s" }} </th>
         <th> {{ em.timedelta }} </th>
         
         <td>{% if em.boolsend %}

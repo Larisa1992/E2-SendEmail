@@ -1,0 +1,6 @@
+{
+  "name": "Send Emal",
+  "description": "Send Emal",
+  "image": "heroku/python",
+  "keywords": ["python", "django" ]
+}
