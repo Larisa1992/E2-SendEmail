@@ -46,6 +46,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DISABLE_COLLECTSTATIC=1
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
